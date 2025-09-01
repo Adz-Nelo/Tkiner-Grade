@@ -38,7 +38,7 @@ def calculate_grades():
         message_label.config(text=message)
         
     except ValueError:
-        messagebox.showerror("Error", "Please enter valid numbers!")
+        messagebox.showerror("Error", "Please enter valid numbers! 😤")
 
 def clear_all():
     mid_entry.delete(0, tk.END)
@@ -50,7 +50,7 @@ def clear_all():
 window = tk.Tk()
 window.title("Simple Grade Calculator")
 window.config(bg="#1a1a2e")
-window.resizable(True, True)
+window.resizable(False, False)
 
 # Set window size AFTER creating it
 window.geometry("350x380")
