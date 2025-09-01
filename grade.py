@@ -16,20 +16,26 @@ def calculate_grades():
         if final_grade >= 90:
             letter = "A"
             color = "#4ade80"  # Green
+            message = "Excellent work! 🎉"
         elif final_grade >= 80:
             letter = "B" 
             color = "#60a5fa"  # Blue
+            message = "Great job! Keep pushing! 💪"
         elif final_grade >= 70:
             letter = "C"
             color = "#fbbf24"  # Yellow
+            message = "Not bad, but there’s room to improve. 🙂"
         elif final_grade >= 60:
             letter = "D"
             color = "#f97316"  # Orange
+            message = "Careful! You’re close to failing. ⚠️"
         else:
             letter = "F"
             color = "#ef4444"  # Red
+            message = "Don’t give up, try harder next time. 💔"
             
         letter_label.config(text=f"Letter Grade: {letter}", fg=color)
+        message_label.config(text=message)
         
     except ValueError:
         messagebox.showerror("Error", "Please enter valid numbers!")
@@ -104,6 +110,12 @@ letter_label = tk.Label(window, text="Letter Grade: --",
                        font=("Poppins", 12),
                        bg="#1a1a2e", fg="#ffffff") 
 letter_label.pack(pady=5)
+
+message_label = tk.Label(window, text="", 
+                         font=("Poppins", 15),
+                         bg="#1a1a2e", fg="#ffffff")
+message_label.pack(pady=5)
+
 
 # Bind Enter key to calculate
 mid_entry.bind('<Return>', lambda e: calculate_grades())
